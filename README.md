@@ -1,0 +1,2 @@
+# register_login_tp3_jquery
+使用thinkphp3.2.3、jquery制作的简易学生ajax异步注册与登陆功能
