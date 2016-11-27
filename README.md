@@ -1,4 +1,53 @@
-﻿## 简介
+##register_login_tp3_jquery
+jquery、ajax、thinkphp3.2.3
+
+created by ansoin
+
+making time 2016年11月27日
+
+###主要模块
+    IndexController.class.php   首页控制器
+        index                   默认方法
+        register                注册方法
+        login                   登录方法
+        
+    AdminController.class.php   个人中心控制器
+        index                   默认方法
+        logout                  注销方法
+        
+    PublicController.class.php  公共控制器
+
+    /Index/index.html     首页
+    /Admin/index.html     个人中心页
+
+###数据库
+    user_info    用户信息表
+    
+        CREATE TABLE IF NOT EXISTS `user_info` (
+        `key` int(7) NOT NULL AUTO_INCREMENT,
+        `id` varchar(12) NOT NULL COMMENT '学号',
+        `name` varchar(12) NOT NULL COMMENT '姓名',
+        `tel` varchar(15) NOT NULL COMMENT '手机',
+        `class` varchar(10) NOT NULL COMMENT '班级',
+        `email` varchar(30) NOT NULL COMMENT '邮箱',
+        PRIMARY KEY (`key`),
+        UNIQUE KEY `id` (`id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+      
+    user_admin   用户账号密码表
+    
+        CREATE TABLE IF NOT EXISTS `user_admin` (
+        `key` int(7) NOT NULL AUTO_INCREMENT,
+        `id` varchar(12) NOT NULL COMMENT '学号',
+        `pwd` varchar(35) NOT NULL COMMENT '密码',
+        `status` int(2) NOT NULL DEFAULT '1' COMMENT '状态：1为正常，2为其他',
+        PRIMARY KEY (`key`),
+        UNIQUE KEY `id` (`id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+
+
+## 简介
 
 ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级PHP开发框架 ，创立于2006年初，遵循Apache2开源协议发布，是为了敏捷WEB应用开发和简化企业应用开发而诞生的。ThinkPHP从诞生以来一直秉承简洁实用的设计原则，在保持出色的性能和至简的代码的同时，也注重易用性。并且拥有众多的原创功能和特性，在社区团队的积极参与下，在易用性、扩展性和性能方面不断优化和改进，已经成长为国内最领先和最具影响力的WEB应用开发框架，众多的典型案例确保可以稳定用于商业以及门户级的开发。
 
