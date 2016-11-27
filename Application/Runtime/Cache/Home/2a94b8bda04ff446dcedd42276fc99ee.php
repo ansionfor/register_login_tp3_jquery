@@ -1,9 +1,9 @@
-<!DOCTYPE html> 
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html> 
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>广州航海学院学生注册与登陆页面</title>
-	<script src="__PUBLIC__/js/jquery-3.1.1.min.js"></script>
+	<script src="/github/register_login_tp3_jquery/Public/js/jquery-3.1.1.min.js"></script>
 
 <style>
 header{
@@ -78,7 +78,7 @@ label{
 			alert('两次密码不一致')
 		}else{
 			$.ajax({
-				url:"<{:U('register')}>",
+				url:"<?php echo U('register');?>",
 				data:{
 					'name':name,
 					'class':class_reg,
@@ -107,7 +107,7 @@ label{
 		var id = $('#id_log').val()
 		var pwd = $('#pwd_log').val()
 		$.ajax({
-			url:"<{:U('login')}>",
+			url:"<?php echo U('login');?>",
 			type:'post',
 			data:{
 				'id':id,

@@ -30,7 +30,7 @@ class IndexController extends PublicController
 			if (!$user->validate($rules)->create()) {
 				$return = $user->getError();
 			}else{
-				#$user->field(array('id','name','tel','email','class'))->add();
+				$user->field(array('id','name','tel','email','class'))->add();
 
 			}
 
