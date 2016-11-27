@@ -4,7 +4,7 @@ use Think\Model;
 /**
 * 
 */
-class UserInfoModel extends Model
+class UserAdminModel extends Model
 {
 	
 	protected $_auto = array(

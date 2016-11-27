@@ -91,7 +91,13 @@ label{
 				},
 				type:'post',
 				success:function(data){
-					console.log(data)
+					if (!$.isNumeric(data[0])) {
+						alert(data[0]);
+					}else if(data[0] == 1){
+						alert('注册成功！')
+						location.href = "<?php echo U(Admin/index);?>"
+					
+					}
 				}
 			})
 		}
@@ -115,7 +121,10 @@ label{
 				'type':'login'
 			},
 			success:function(data){
-				console.log(data)
+				if (data == 1) {
+					alert('登录成功')
+					location.href = "<?php echo U(Admin/index);?>"
+				};
 
 			}
 		})
@@ -140,19 +149,19 @@ label{
 				<fieldset>
 					<legend>学生注册</legend>
 					<label for="name">姓名</label>
-					<input type="text" name="name" id="name" value="何安胜" placeholder="请输入姓名" required><br>
+					<input type="text" name="name" id="name" placeholder="请输入姓名" required><br>
 					<label for="class_reg">班级</label>
-					<input type="text" name="class_reg" id="class_reg" value="计商142" placeholder="计商142" required><br>
+					<input type="text" name="class_reg" id="class_reg" placeholder="计商142" required><br>
 					<label for="id">学号</label>
-					<input type="text" name="id" id="id" placeholder="请填写学号" value="201415230210" pattern="[\d]{12}" required><br>
+					<input type="text" name="id" id="id" placeholder="请填写12位学号" pattern="[\d]{12}" required><br>
 					<label for="tel">手机</label>
-					<input type="tel" name="tel" value="13143338720" id="tel" placeholder="请输入手机" required><br>
+					<input type="tel" name="tel" id="tel" placeholder="请输入手机" required><br>
 					<label for="email">邮箱</label>
-					<input type="email" name="email" id="email" value="779@qq.com" placeholder="请输入邮箱" required><br>
+					<input type="email" name="email" id="email" placeholder="请输入邮箱" required><br>
 					<label for="pwd">密码</label>
-					<input type="password" name="pwd" id="pwd" placeholder="请输入密码" value="123123" required><br>
+					<input type="password" name="pwd" id="pwd" placeholder="请输入6位以上密码" required><br>
 					<label for="pwd2">确认密码</label>
-					<input type="password" value="123123" name="pwd2" id="pwd2" placeholder="请确认密码" required><br>
+					<input type="password" name="pwd2" id="pwd2" placeholder="请确认密码" required><br>
 					<input type="submit" value="注册">
 				</fieldset>
 			</form>
