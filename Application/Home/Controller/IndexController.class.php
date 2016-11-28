@@ -63,7 +63,6 @@ class IndexController extends Controller
     		$return = 0;
     		if ($result) {
     			session('user_id',$result['id']);
-    			session('user_name',$result['name']);
     			$return = 1;
     		}
     		$this->ajaxReturn($return);

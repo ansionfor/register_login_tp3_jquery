@@ -19,8 +19,7 @@ return array(
 	'DB_DEBUG'  =>  TRUE, // 数据库调试模式 开启后可以记录SQL日志
 
 	//配置session
-	// 'SESSION_OPTIONS' => array(
-	// 		'expire'  =>  3600
-	// 		
-	// 	)
+	'SESSION_OPTIONS' => array(
+			'expire'  =>  360
+		)
 );
